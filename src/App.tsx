@@ -1,5 +1,4 @@
 import React from "react";
-import { Body } from "./body/Body";
 import "./App.css";
 import {
   ChameleonRoot,
@@ -9,14 +8,13 @@ import {
   IconHelp,
   PageHeader,
 } from "@kounta/chameleon";
-import { products } from "./fixtures/products";
+import { Tile } from "./Tile";
 
 function App() {
   return (
     <ChameleonRoot>
       <div className="App" style={styles.container}>
-        <Header />
-        <Body products={products} />
+        <Tile />
       </div>
     </ChameleonRoot>
   );
@@ -31,20 +29,4 @@ const styles = {
   },
 };
 
-const Header = () => {
-  const left = (
-    <IconButton>
-      <IconArrowLeft />
-    </IconButton>
-  );
-
-  const right = (
-    <Group horizontal spacing="4px">
-      <IconButton label="Help" labelFirst>
-        <IconHelp width={20} height={20} />
-      </IconButton>
-    </Group>
-  );
-  return <PageHeader leftContent={left} rightContent={right} />;
-};
 export default App;
